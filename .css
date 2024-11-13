@@ -1,0 +1,196 @@
+/* Import Google Font for primary heading (Method 1) */
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+
+/* Base styling for the webpage */
+/* Sets a soft background color and pastel font colors */
+body {
+    font-family: 'Roboto', sans-serif; /* Using Roboto for body text */
+    background-color: #e6f7f2; /* Light pastel green background */
+    color: #4a4a4a; /* Dark grey text for readability */
+    margin: 0; /* Remove default margin */
+}
+
+/* Header section styling */
+/* Adds a pastel green background and centers header text */
+header {
+    background-color: #cfe2d1; /* Soft pastel green */
+    color: #333; /* Darker text for contrast */
+    padding: 20px;
+    text-align: center; /* Center the header text */
+    font-size: 1.8em; /* Larger font size for header */
+}
+
+/* Navigation styling with Flexbox */
+/* Pastel green background for nav items and rounded corners on hover */
+nav ul {
+    list-style: none; /* Remove default list styling */
+    display: flex; /* Flexbox for horizontal layout */
+    justify-content: center; /* Center nav items */
+    padding: 0; /* Remove padding */
+}
+
+nav ul li {
+    margin: 0 15px; /* Spacing between nav items */
+}
+
+nav ul li a {
+    color: #4a4a4a; /* Dark grey text */
+    text-decoration: none; /* Remove underline */
+    padding: 10px; /* Padding for clickable area */
+    background-color: #a8d8a5; /* Soft pastel mint green */
+    border-radius: 8px; /* Rounded corners */
+}
+
+nav ul li a:hover {
+    color: #ffffff; /* White text on hover */
+    background-color: #7ca87a; /* Slightly darker mint green on hover */
+}
+
+/* Section styling for #bio with unique visual treatment */
+/* Light pastel peach background and soft border */
+#bio {
+    padding: 20px;
+    background-color: #e4f2e1; /* Light pastel greenish yellow */
+    margin: 20px auto;
+    width: 80%;
+    border: 2px solid #b7d7a8; /* Soft pastel mint green border */
+    border-radius: 10px; /* Rounded corners for a gentle look */
+}
+
+/* Styling for primary heading with Google Font */
+/* Uses the linked Google Font for h1 elements */
+h1 {
+    font-family: 'Pacifico', cursive; /* Using Google Font for primary heading */
+    font-size: 2.5em;
+    font-weight: 700; /* Bold heading */
+    color: #5d8b67; /* Soft sage green */
+    text-align: center; /* Center-align heading */
+}
+
+h2 {
+    font-size: 1.8em;
+    font-weight: 700; /* Bold subheadings */
+    color: #5d8b67; /* Soft sage green */
+}
+
+/* Image styling */
+/* Rounded corners, border, and shadow to enhance visual appeal */
+img {
+    max-width: 100%; /* Make sure images fit within their container */
+    height: auto;
+    border-radius: 8px; /* Rounded corners for images */
+    border: 3px solid #d1f0e3; /* Light pastel green border */
+    box-shadow: 2px 2px 8px rgba(0, 0, 0, 0.1); /* Light shadow for depth */
+}
+
+figure {
+    text-align: center; /* Center images and captions */
+}
+
+figcaption {
+    font-size: 0.9em;
+    color: #7a7a7a; /* Light grey color for captions */
+}
+
+/* Table styling */
+/* Adds pastel accents and spacing for readability */
+table {
+    width: 100%;
+    border-collapse: collapse; /* Remove spacing between cells */
+    margin: 20px 0; /* Margin around the table */
+    background-color: #f1f9f1; /* Light pastel greenish white background */
+}
+
+caption {
+    font-weight: bold;
+    font-size: 1.2em;
+    color: #4a4a4a; /* Dark grey color for captions */
+    margin-bottom: 10px;
+}
+
+th, td {
+    border: 1px solid #d3c7a1; /* Soft tan border for table cells */
+    padding: 10px;
+    text-align: center; /* Center-align table content */
+}
+
+th {
+    background-color: #d3e7d5; /* Soft pastel mint background for table headers */
+}
+
+/* Link styling */
+/* Soft blue color with underline effect on hover */
+a {
+    color: #7fa9d7; /* Soft pastel blue */
+    text-decoration: none; /* Remove underline by default */
+}
+
+a:hover {
+    text-decoration: underline; /* Underline on hover */
+    color: #5189c5; /* Darker pastel blue on hover */
+}
+
+/* Footer styling */
+/* Soft pastel pink background to clearly distinguish footer */
+footer {
+    background-color: #f3d0c7; /* Light pastel peach pink */
+    color: #4a4a4a; /* Dark grey text for readability */
+    text-align: center; /* Center-align footer text */
+    padding: 15px;
+    margin-top: 20px; /* Margin to separate from content above */
+    font-size: 0.9em;
+}
+
+/* Layout adjustment for non-linear flow using Flexbox */
+/* Sidebar and main content with light pastel backgrounds */
+.main-content {
+    display: flex; /* Flexbox for non-linear layout */
+    flex-direction: row; /* Arrange sidebar and content in a row */
+    justify-content: space-between; /* Space between sidebar and main content */
+    padding: 20px;
+}
+
+.main-content .sidebar {
+    width: 25%;
+    background-color: #f0f8e9; /* Light pastel beige-green for sidebar */
+    padding: 15px;
+    border-right: 2px solid #d1d9c4; /* Light beige border between sidebar and content */
+    border-radius: 10px;
+}
+
+.main-content .main {
+    width: 70%; /* Main content takes up most of the space */
+    padding: 15px;
+}
+
+/* Contact information styling */
+/* Soft pastel blue background and rounded borders */
+.contact-info {
+    background-color: #d9f0f0; /* Light pastel blue */
+    padding: 15px;
+    margin: 20px 0; /* Margin to separate from other content */
+    border-radius: 8px; /* Rounded corners */
+}
+
+/* Responsive design section */
+/* Adjusts layout and font sizes for smaller screens */
+@media (max-width: 800px) {
+    /* Stacks layout vertically on smaller screens */
+    .main-content {
+        flex-direction: column; /* Stack sidebar and content in a column */
+    }
+    
+    nav ul {
+        flex-direction: column; /* Stack nav items vertically */
+    }
+}
+
+@media (max-width: 600px) {
+    body {
+        font-size: 14px; /* Adjust font size on smaller screens */
+    }
+
+    nav ul li a {
+        padding: 5px; /* Reduce padding on small screens */
+    }
+}
