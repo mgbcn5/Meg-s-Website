@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head> 
+     <link rel="CSS" href=".css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Me</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header>
+        <nav>
+            <ul>
+                <li><a href="index.html">About Me</a></li>
+                <li><a href="about.html">Experience</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>About Me</h1>
+        <img src="https://media1.tenor.com/m/ogSM6IIOhk0AAAAC/hello-wave.gif" alt="A cute animated character waving hello">
+        <p> Tenor. (n.d.). Hello wave cute anime cartoon [GIF]. Retrieved from https://tenor.com/view/hello-wave-cute-anime-cartoon-gif-11674611064293459533 </p>
+        <p>My name is Meg and I am currently in my first year of UX Design. I am enrolled at SAIT where I am learning the basic principles of User Experience and design. So far, I have only worked on small projects and am hoping to keep learning more. In my spare time, I love designing clothes and am very passionate about it. I love experimenting with fabrics, styles, and clothes to create unique designs. Fashion is a great form of self-expression for me. I am also excited about venturing into game design soon! I want to combine my love for storytelling and aesthetics to create immersive experiences where players can explore their own styles and narratives. It's a fun challenge, and I can't wait to bring my ideas to life!</p>
+        <!-- Skills Section -->
+        <h2>Skills</h2>
+        <ul>
+            <li>Adobe Premiere Pro</li>
+            <li>Adobe Illustrator</li>
+            <li>Adobe Photoshop</li>
+            <li>Procreate</li>
+        </ul>
+<!-- Contact Details Section -->
+        <h2>Contact Details</h2>
+        <p>Here are some ways you can reach me and view some of my profiles!</p>
+        <ul>
+            <li><strong>Email:</strong> <a href="mailto:megbcon5@gmail.com">megbcon5@gmail.com</a></li>
+            <li><strong>GitHub:</strong> <a href="https://github.com/mgbcn5" target="_blank">profile on GitHub</a></li>
+            <li><strong>LinkedIn:</strong> <a href="https://www.linkedin.com/in/megboacon/" target="_blank">linkedin.com/in/yourprofile</a></li>
+        </ul>
+
+        <div class="navigation">
+            <a class="next" href="about.html">Next: Experience</a>
+        </div>
+    </main>
+</body>
+</html>
+
+
+
