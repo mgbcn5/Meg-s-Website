@@ -1,8 +1,8 @@
 /* Import Google Font for primary heading (Method 1) */
-url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Pacifico&display=swap');
 
 /* Base styling for the webpage */
-/* Sets a soft background color and pastel font colors */
+/* This section sets the default font, background color, and text color for the entire webpage */
 body {
     font-family: 'Roboto', sans-serif; /* Using Roboto for body text */
     background-color: #e6f7f2; /* Light pastel green background */
@@ -11,7 +11,7 @@ body {
 }
 
 /* Header section styling */
-/* Adds a pastel green background and centers header text */
+/* This section styles the header, adding background color, text alignment, and padding */
 header {
     background-color: #cfe2d1; /* Soft pastel green */
     color: #333; /* Darker text for contrast */
@@ -21,7 +21,7 @@ header {
 }
 
 /* Navigation styling with Flexbox */
-/* Pastel green background for nav items and rounded corners on hover */
+/* This section uses Flexbox to create a responsive horizontal navigation menu */
 nav ul {
     list-style: none; /* Remove default list styling */
     display: flex; /* Flexbox for horizontal layout */
@@ -47,7 +47,7 @@ nav ul li a:hover {
 }
 
 /* Section styling for #bio with unique visual treatment */
-/* Light pastel peach background and soft border */
+/* This section defines the styling for the bio section, including background color, padding, and borders */
 #bio {
     padding: 20px;
     background-color: #e4f2e1; /* Light pastel greenish yellow */
@@ -58,7 +58,7 @@ nav ul li a:hover {
 }
 
 /* Styling for primary heading with Google Font */
-/* Uses the linked Google Font for h1 elements */
+/* This section customizes the primary heading (h1) with a unique font and color */
 h1 {
     font-family: 'Pacifico', cursive; /* Using Google Font for primary heading */
     font-size: 2.5em;
@@ -67,6 +67,8 @@ h1 {
     text-align: center; /* Center-align heading */
 }
 
+/* Subheading styling (h2) */
+/* Customizes subheadings with a bold, large font and matching color */
 h2 {
     font-size: 1.8em;
     font-weight: 700; /* Bold subheadings */
@@ -74,7 +76,7 @@ h2 {
 }
 
 /* Image styling */
-/* Rounded corners, border, and shadow to enhance visual appeal */
+/* This section provides styles for images, including rounded corners, borders, and shadow effects */
 img {
     max-width: 100%; /* Make sure images fit within their container */
     height: auto;
@@ -93,7 +95,7 @@ figcaption {
 }
 
 /* Table styling */
-/* Adds pastel accents and spacing for readability */
+/* This section defines styles for tables, including borders, padding, and alternating header colors */
 table {
     width: 100%;
     border-collapse: collapse; /* Remove spacing between cells */
@@ -119,7 +121,7 @@ th {
 }
 
 /* Link styling */
-/* Soft blue color with underline effect on hover */
+/* This section customizes the link styles, providing a soft color and underline effect on hover */
 a {
     color: #7fa9d7; /* Soft pastel blue */
     text-decoration: none; /* Remove underline by default */
@@ -131,7 +133,7 @@ a:hover {
 }
 
 /* Footer styling */
-/* Soft pastel pink background to clearly distinguish footer */
+/* This section styles the footer with a light pastel pink background, center-aligned text, and padding */
 footer {
     background-color: #f3d0c7; /* Light pastel peach pink */
     color: #4a4a4a; /* Dark grey text for readability */
@@ -142,7 +144,7 @@ footer {
 }
 
 /* Layout adjustment for non-linear flow using Flexbox */
-/* Sidebar and main content with light pastel backgrounds */
+/* This section organizes the main content and sidebar into a responsive layout using Flexbox */
 .main-content {
     display: flex; /* Flexbox for non-linear layout */
     flex-direction: row; /* Arrange sidebar and content in a row */
@@ -164,7 +166,7 @@ footer {
 }
 
 /* Contact information styling */
-/* Soft pastel blue background and rounded borders */
+/* This section customizes the contact information block, giving it a soft pastel blue background and rounded corners */
 .contact-info {
     background-color: #d9f0f0; /* Light pastel blue */
     padding: 15px;
@@ -173,7 +175,7 @@ footer {
 }
 
 /* Responsive design section */
-/* Adjusts layout and font sizes for smaller screens */
+/* These media queries ensure the layout is responsive and adjusts properly for smaller screens */
 @media (max-width: 800px) {
     /* Stacks layout vertically on smaller screens */
     .main-content {
@@ -183,6 +185,27 @@ footer {
     nav ul {
         flex-direction: column; /* Stack nav items vertically */
     }
+
+    body {
+        font-size: 16px; /* Slightly smaller font for better readability on tablets */
+    }
+
+    header {
+        font-size: 1.6em; /* Reduce font size for smaller screen */
+    }
+
+    nav ul li {
+        margin: 0 10px; /* Reduce spacing between nav items */
+    }
+
+    .main-content .sidebar {
+        width: 100%; /* Sidebar takes full width */
+        margin-bottom: 20px; /* Add margin for spacing */
+    }
+
+    .main-content .main {
+        width: 100%; /* Main content takes full width */
+    }
 }
 
 @media (max-width: 600px) {
@@ -190,7 +213,48 @@ footer {
         font-size: 14px; /* Adjust font size on smaller screens */
     }
 
-    nav ul li a {
-        padding: 5px; /* Reduce padding on small screens */
+    header {
+        font-size: 1.4em; /* Reduce header font size */
+    }
+
+    nav ul li {
+        margin: 0 5px; /* Reduce spacing between nav items */
+    }
+
+    .main-content {
+        flex-direction: column; /* Stack layout vertically */
+    }
+
+    .main-content .sidebar,
+    .main-content .main {
+        width: 100%; /* Both sidebar and main content take full width */
+    }
+
+    .contact-info {
+        padding: 10px; /* Reduce padding in contact info */
+    }
+
+    table {
+        font-size: 0.9em; /* Reduce table font size for smaller screens */
+    }
+
+    img {
+        max-width: 90%; /* Ensure images don't overflow on smaller screens */
     }
 }
+
+/* Media query for very large screens (e.g., desktops over 1200px) */
+@media (min-width: 1200px) {
+    body {
+        font-size: 18px; /* Increase font size for large screens */
+    }
+
+    .main-content {
+        padding: 40px; /* Add more padding for spacious layout */
+    }
+
+    .main-content .sidebar {
+        width: 20%; /* Sidebar takes less width on large screens */
+    }
+
+    .main-content .main
