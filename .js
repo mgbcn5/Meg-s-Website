@@ -1,70 +1,58 @@
-// main.js
+// Part 1: Sanity Check
+console.log("JavaScript is connected!");
 
-// Greeting functionality
-function setGreeting() {
-    const hour = new Date().getHours();
-    const greetingElement = document.getElementById('greeting');
-    let greetingText;
-    let greetingClass;
+// Part 3: Footer with Dynamic Date and Today's Date
+const footer = document.getElementById("footer");
+const currentDate = new Date();
 
-    if (hour < 12) {
-        greetingText = "Good morning!";
-        greetingClass = "morning-theme";
-    } else if (hour < 17) {
-        greetingText = "Good afternoon!";
-        greetingClass = "afternoon-theme";
-    } else {
-        greetingText = "Good evening!";
-        greetingClass = "evening-theme";
-    }
+// Format the full date for display
+const options = { year: "numeric", month: "long", day: "numeric" }; // Customize as needed
+const fullDate = currentDate.toLocaleDateString("en-US", options);
 
-    greetingElement.textContent = greetingText;
-    greetingElement.className = greetingClass;
+// Add the current time
+const currentTime = currentDate.toLocaleTimeString("en-US");
+
+// Display copyright, today's date, and time in the footer
+footer.innerHTML = `&copy; Your Name, ${currentDate.getFullYear()}<br>Today is: ${fullDate} at ${currentTime}`;
+
+// Log today's full date and time to the console
+console.log("Today's Date:", fullDate);
+console.log("Current Time:", currentTime);
+
+// Part 3: Greeting Based on Time of Day
+const greeting = document.getElementById("greeting");
+const hour = currentDate.getHours();
+
+if (hour < 12) {
+    greeting.textContent = "Good morning!";
+    greeting.classList.add("morning");
+} else if (hour < 17) {
+    greeting.textContent = "Good afternoon!";
+    greeting.classList.add("afternoon");
+} else {
+    greeting.textContent = "Good evening!";
+    greeting.classList.add("evening");
 }
 
-// Footer with dynamic year
-function setFooter() {
-    const currentYear = new Date().getFullYear();
-    document.getElementById('footer').innerHTML = 
-        `© ${currentYear} Your Portfolio. All rights reserved.`;
-    
-    // Print full date to console
-    console.log('Today\'s date:', new Date().toLocaleDateString());
+// Part 3: Alert Button
+const alertButton = document.getElementById("btn-alert");
+alertButton.addEventListener("click", () => alert("Hello world!"));
+
+// Part 3: Hover Button
+alertButton.onmouseover = () => {
+    alertButton.textContent = "Hovered!";
+};
+alertButton.onmouseout = () => {
+    alertButton.textContent = "Click me!";
+};
+
+// Part 3: For Loop to Populate List
+const numbersList = document.getElementById("numbers");
+
+for (let i = 1; i <= 12; i++) {
+    const listItem = document.createElement("li");
+    listItem.textContent = i % 2 === 0 ? "Even" : "Odd";
+    numbersList.appendChild(listItem);
 }
 
-// Alert button functionality
-function setupAlertButton() {
-    const alertBtn = document.getElementById('btn-alert');
-    
-    alertBtn.addEventListener('click', () => {
-        alert('Hello world!');
-    });
-
-    alertBtn.addEventListener('mouseover', () => {
-        alertBtn.textContent = 'Click me!';
-    });
-
-    alertBtn.addEventListener('mouseout', () => {
-        alertBtn.textContent = 'Alert Button';
-    });
-}
-
-// Generate numbered list
-function generateNumberedList() {
-    const numbersList = document.getElementById('numbers');
-    
-    for (let i = 1; i <= 12; i++) {
-        const listItem = document.createElement('li');
-        listItem.textContent = `${i} is ${i % 2 === 0 ? 'even' : 'odd'}`;
-        numbersList.appendChild(listItem);
-    }
-}
-
-// Initialize all functionality when DOM is loaded
-document.addEventListener('DOMContentLoaded', () => {
-    setGreeting();
-    setFooter();
-    setupAlertButton();
-    generateNumberedList();
-});
 
