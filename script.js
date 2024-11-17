@@ -36,10 +36,9 @@ alertButton.onmouseout = () => {
 };
 
 // Part 6: For Loop to Populate List
-const numbersList = document.getElementById("numbers");
+const numbersList = document.getElementById("numbers"); // Ensure this element exists in HTML
 for (let i = 1; i <= 12; i++) {
     const listItem = document.createElement("li");
     listItem.textContent = i % 2 === 0 ? "Even" : "Odd";
     numbersList.appendChild(listItem);
 }
-
