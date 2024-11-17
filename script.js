@@ -42,3 +42,4 @@ for (let i = 1; i <= 12; i++) {
     listItem.textContent = i % 2 === 0 ? "Even" : "Odd";
     numbersList.appendChild(listItem);
 }
+
