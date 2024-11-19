@@ -1,63 +1,85 @@
-// Part 1: Sanity Check
-console.log("JavaScript is connected!");
-
-// Part 2: Footer with Dynamic Date and Today's Date
-const currentDate = new Date();
-const options = { year: "numeric", month: "long", day: "numeric" };
-const fullDate = currentDate.toLocaleDateString("en-US", options);
-const footer = document.getElementById("footer");
-
-if (footer) {
-    footer.innerHTML = `&copy; Your Name, ${currentDate.getFullYear()}<br>Today is: ${fullDate}`;
-    console.log("Today's Date:", fullDate);
-} else {
-    console.error("Footer element not found!");
-}
-
-// Part 3: Greeting Based on Time of Day
-const greeting = document.getElementById("greeting");
-const hour = currentDate.getHours();
-if (greeting) {
-    if (hour < 12) {
-        greeting.textContent = "Good morning!";
-        greeting.classList.add("morning");
-    } else if (hour < 17) {
-        greeting.textContent = "Good afternoon!";
-        greeting.classList.add("afternoon");
-    } else {
-        greeting.textContent = "Good evening!";
-        greeting.classList.add("evening");
+// Wait for the DOM to be fully loaded before running scripts
+document.addEventListener('DOMContentLoaded', function() {
+    // Part 3: Footer with current year
+    function createFooter() {
+        const footer = document.createElement('footer');
+        const currentYear = new Date().getFullYear();
+        footer.innerHTML = `© ${currentYear} Meg Boacon. All rights reserved.`;
+        document.body.appendChild(footer);
+        
+        // Print full date to console
+        console.log('Today\'s date:', new Date().toDateString());
     }
-} else {
-    console.error("Greeting element not found!");
-}
+    createFooter();
 
-// Part 4: Alert Button
-const alertButton = document.getElementById("btn-alert");
+    // Part 3: Portfolio Greeting
+    function setGreeting() {
+        // Create greeting element if it doesn't exist
+        const greetingDiv = document.createElement('div');
+        greetingDiv.id = 'greeting';
+        // Insert greeting before the h1
+        const h1 = document.querySelector('h1');
+        h1.parentNode.insertBefore(greetingDiv, h1);
 
-if (alertButton) {
-    alertButton.addEventListener("click", () => alert("Hello world!"));
+        const hour = new Date().getHours();
+        let greeting;
+        let greetingClass;
 
-    // Hover Button
-    alertButton.onmouseover = () => {
-        alertButton.textContent = "Hovered!";
-    };
-    alertButton.onmouseout = () => {
-        alertButton.textContent = "Click me!";
-    };
-} else {
-    console.error("Alert button not found!");
-}
+        if (hour < 12) {
+            greeting = "Good morning!";
+            greetingClass = "morning";
+        } else if (hour < 17) {
+            greeting = "Good afternoon!";
+            greetingClass = "afternoon";
+        } else {
+            greeting = "Good evening!";
+            greetingClass = "evening";
+        }
 
-// Part 5: For Loop to Populate List
-const numbersList = document.getElementById("numbers");
-
-if (numbersList) {
-    for (let i = 1; i <= 12; i++) {
-        const listItem = document.createElement("li");
-        listItem.textContent = i % 2 === 0 ? "Even" : "Odd";
-        numbersList.appendChild(listItem);
+        greetingDiv.textContent = greeting;
+        greetingDiv.className = greetingClass;
     }
-} else {
-    console.error("Numbers list element not found!");
-}
+    setGreeting();
+
+    // Part 3: Alert Button
+    function createAlertButton() {
+        const button = document.createElement('button');
+        button.id = 'btn-alert';
+        button.textContent = 'Click me!';
+        
+        // Add button after contact details
+        const contactSection = document.querySelector('h2:last-of-type');
+        contactSection.after(button);
+
+        button.addEventListener('click', function() {
+            alert('Hello world!');
+        });
+
+        // Hover functionality
+        button.addEventListener('mouseover', function() {
+            this.textContent = 'Go ahead, click!';
+        });
+
+        button.addEventListener('mouseout', function() {
+            this.textContent = 'Click me!';
+        });
+    }
+    createAlertButton();
+
+    // Part 3: Number List
+    function createNumberList() {
+        const ol = document.createElement('ol');
+        ol.id = 'numbers';
+        
+        // Add list after the alert button
+        const button = document.getElementById('btn-alert');
+        button.after(ol);
+
+        for (let i = 1; i <= 12; i++) {
+            const li = document.createElement('li');
+            li.textContent = i % 2 === 0 ? 'even' : 'odd';
+            ol.appendChild(li);
+        }
+    }
+    createNumberList();
+});
