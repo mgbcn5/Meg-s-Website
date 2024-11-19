@@ -320,7 +320,27 @@ footer {
         max-width: 90%; /* Ensure images don't overflow on smaller screens */
     }
 }
+/* Resume link styling */
+.resume-container {
+    margin: 2rem 0;
+    text-align: center;
+}
 
+.resume-link {
+    display: inline-block;
+    padding: 0.8rem 1.5rem;
+    background-color: #a8d8a5; 
+    color: #4a4a4a;
+    border-radius: 8px;
+    margin: 0.5rem 0;
+    transition: all 0.3s ease;
+}
+
+.resume-link:hover {
+    background-color: #7ca87a;
+    color: #ffffff;
+    text-decoration: none;
+}
 /* Media query for very large screens (e.g., desktops over 1200px) */
 @media (min-width: 1200px) {
     body {
